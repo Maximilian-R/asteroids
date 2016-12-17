@@ -30,16 +30,31 @@ package gameobjects {
 			graphics.lineStyle(Config.getNumber("lineThickness", _type), Config.getColor("colorLine", _type));
 			
 			var size:Number = Config.getNumber("radius", _type);
-			var cornerSize:Number = size * 0.7;
-			graphics.moveTo(0, -size);
-			graphics.lineTo(-cornerSize, -cornerSize);
-			graphics.lineTo(-size, 0);
-			graphics.lineTo(-cornerSize, cornerSize);
-			graphics.lineTo(0, size);
-			graphics.lineTo(cornerSize, cornerSize);
-			graphics.lineTo(size, 0);
-			graphics.lineTo(cornerSize, -cornerSize);
-			graphics.lineTo(0, -size);
+			
+			var firstX:Number;
+			var firstY:Number;
+			var vertexes:Number = 8;
+			
+			var offsets:Array = new Array();
+			for (var j:int = 0; j < vertexes; j++) {
+				offsets.push(Utils.randomNum(-10,10));
+			}
+			
+			graphics.moveTo(size + offsets[0], 0);
+			for (var i:int = 0; i < vertexes; i++) {
+				var angle:Number = (360 / vertexes * i) * (Math.PI / 180);
+				var r:Number = size + offsets[i];
+				var x:Number = r * Math.cos(angle);
+				var y:Number = r * Math.sin(angle);
+				graphics.lineTo(x, y);
+				
+				if (i == 0) {
+					firstX = x;
+					firstY = y;
+				}
+			}
+			graphics.lineTo(firstX, firstY);
+			graphics.endFill();
 			
 			cacheAsBitmap = true;
 		}
