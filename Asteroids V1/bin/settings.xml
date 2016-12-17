@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<ship thrust = "0.6" roational_thrust = "3" shoot_rate = "400" turn_rate="200" warp_rate="1000" friction="0.98" lives="3" gravity="0.2" colorLine="0xFFFFFF" colorDetail="0xB121EF"  />
+	<immortal spawn_immortal_time="80" opacity="0.3"/>
+	<flame lenght="60" inner_color="0xF8DE29" middle_color="0xFA8127" outer_color=" 0xCB0303" base_length="60" vary_length="10" width="40" />
+	<ufo width="100" height="60" colorLine="0xFFFFFF" shoot_rate = "2000" thrust = "1" spawn_interval_min="1000" spawn_interval_max="3000" />
+	<asteroid_big radius="100" start_speed="2" child_type="asteroid_medium" child_count="3" colorFill="0x55125F" colorLine="0xFFFFFF" lineThickness="6" />
+	<asteroid_medium radius="50" start_speed="4"child_type="asteroid_small" child_count="2" colorFill="0x1F5A48" colorLine="0xFFFFFF" lineThickness="5" />
+	<asteroid_small radius="30" start_speed="8" child_type="" child_count="0" colorFill="0x954D48" colorLine="0xFFFFFF" lineThickness="4" />
+	<bullet impulse="20" time_to_live ="60" color = "0x00FFFF" width="4" height="10" />
+	<gfxshake shake_size="12" />
+	<gfxboom end_radius="140" color="0xFC7B07" growing_speed="20" />
+	<gfxstarshine end_lenght="70" color="0xFDF160" growing_speed="5" />
+	<superpower radius="10"/>
+	<rapidfire color="0xFF0000" duration="100" modified_shot_rate="300" />
+	<healthpack color="0xFF0000" />
+	<powermanager frames_between_spawns="2000" lucky_rate="0.005" />
+	<shield max_shield="1.0" damage_per_bullet="0.3" color="0xF3EE10" />
+	<level id="1" asteroids_spawn="4" completionScore="200" />
+	<level id="2" asteroids_spawn="7" completionScore="400"/>
+	<level id="3" asteroids_spawn="10" completionScore="800"/>
+	<score asteroid="5" ufo="50" max_time_bonus="10000" />
+	<rocketdesign1 width="62" height="142" flame_position="70" />
+	<rocketdesign2 width="102" height="132" flame_position="50" />
+	<rocketdesign3 width="122" height="132" flame_position="30"/>
+	<stage color="0x060613" no_spawn_zone="200" stars="200" />
+</settings>
